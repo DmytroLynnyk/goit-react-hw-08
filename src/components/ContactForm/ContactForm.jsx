@@ -1,19 +1,19 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import css from './ContactForm.module.css';
-import { useId } from 'react';
-import * as Yup from 'yup';
-import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/operations';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import css from "./ContactForm.module.css";
+import { useId } from "react";
+import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/contacts/operations";
 
 const userSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
   number: Yup.string()
-    .min(3, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
 });
 
 export const ContactForm = () => {
@@ -26,8 +26,8 @@ export const ContactForm = () => {
     <div>
       <Formik
         initialValues={{
-          name: '',
-          number: '',
+          name: "",
+          number: "",
         }}
         validationSchema={userSchema}
         onSubmit={(values, actions) => {

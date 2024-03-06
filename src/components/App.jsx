@@ -11,7 +11,7 @@ import { useAuth } from "../hooks";
 const HomePage = lazy(() => import("../pages/Home"));
 const RegisterPage = lazy(() => import("../pages/Register"));
 const LoginPage = lazy(() => import("../pages/Login"));
-const TasksPage = lazy(() => import("../pages/Contacts"));
+const ContactsList = lazy(() => import("../pages/Contacts"));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ export const App = () => {
             path="/register"
             element={
               <RestrictedRoute
-                redirectTo="/tasks"
+                redirectTo="/contacts"
                 component={<RegisterPage />}
               />
             }
@@ -40,13 +40,16 @@ export const App = () => {
           <Route
             path="/login"
             element={
-              <RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
             }
           />
           <Route
-            path="/tasks"
+            path="/contacts"
             element={
-              <PrivateRoute redirectTo="/login" component={<TasksPage />} />
+              <PrivateRoute redirectTo="/login" component={<ContactsList />} />
             }
           />
         </Route>
