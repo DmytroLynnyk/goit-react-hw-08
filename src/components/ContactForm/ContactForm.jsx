@@ -20,7 +20,7 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
 
   const nameFiealdId = useId();
-  const phoneFiealdId = useId();
+  const numberFiealdId = useId();
 
   return (
     <div>
@@ -51,12 +51,12 @@ export const ContactForm = () => {
             />
           </div>
           <div className={css.formBox}>
-            <label htmlFor={phoneFiealdId}>Phone</label>
+            <label htmlFor={numberFiealdId}>Phone number</label>
             <Field
               className={css.fieldBox}
               type="text"
               name="number"
-              id={phoneFiealdId}
+              id={numberFiealdId}
             />
             <ErrorMessage
               name="number"

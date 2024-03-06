@@ -4,7 +4,7 @@ import { IoMdPerson } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contacts/operations";
 
-export const Contact = ({ contact: { id, name, phone } }) => {
+export const Contact = ({ contact: { id, name, number } }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => dispatch(deleteContact(id));
@@ -18,7 +18,7 @@ export const Contact = ({ contact: { id, name, phone } }) => {
         </p>
         <p>
           <FaPhoneAlt className={css.contactIcon} />
-          {phone}
+          {number}
         </p>
       </div>
       <button type="button" className={css.deleteBtn} onClick={handleDelete}>

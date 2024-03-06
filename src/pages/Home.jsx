@@ -20,12 +20,7 @@ export default function Home() {
       <DocumentTitle>Home</DocumentTitle>
 
       <div style={styles.container}>
-        <h1 style={styles.title}>
-          Contacts manager welcome page{" "}
-          <span role="img" aria-label="Greeting icon">
-            💁‍♀️
-          </span>
-        </h1>
+        <h1 style={styles.title}>Phonebook</h1>
       </div>
     </>
   );
