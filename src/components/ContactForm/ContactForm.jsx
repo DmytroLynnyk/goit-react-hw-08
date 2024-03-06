@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import css from "./ContactForm.module.css";
 import { useId } from "react";
 import * as Yup from "yup";
+import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 
@@ -19,7 +19,7 @@ const userSchema = Yup.object().shape({
 export const ContactForm = () => {
   const dispatch = useDispatch();
 
-  const nameFiealdId = useId();
+  const nameFieldId = useId();
   const numberFiealdId = useId();
 
   return (
@@ -37,12 +37,12 @@ export const ContactForm = () => {
       >
         <Form className={css.contactForm} autoComplete="off">
           <div className={css.formBox}>
-            <label htmlFor={nameFiealdId}>Name</label>
+            <label htmlFor={nameFieldId}>Name</label>
             <Field
               className={css.fieldBox}
               type="text"
               name="name"
-              id={nameFiealdId}
+              id={nameFieldId}
             />
             <ErrorMessage
               name="name"
