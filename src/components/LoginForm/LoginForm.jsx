@@ -15,15 +15,7 @@ export const LoginForm = () => {
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
-    )
-      .unwrap()
-      .then(() => {
-        toast.success("Welcome to the App");
-      })
-      .catch(() => {
-        toast.error("Incorrect username or password");
-      });
-
+    );
     form.reset();
   };
 
