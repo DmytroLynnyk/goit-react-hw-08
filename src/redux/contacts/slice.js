@@ -45,6 +45,7 @@ const contactsSlice = createSlice({
         );
         state.items.splice(index, 1);
       });
+    // .addCase(deleteContact.rejected, handleReject);
   },
 });
 
