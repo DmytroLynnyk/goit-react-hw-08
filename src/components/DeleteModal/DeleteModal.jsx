@@ -1,3 +1,4 @@
+import css from "./DeleteModal.module.css";
 import { useState } from "react";
 import ReactModal from "react-modal";
 
@@ -44,9 +45,11 @@ export const DeleteModal = ({ id }) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h3>Delete contact</h3>
-        <button onClick={closeAndDeleteModal}>Yes</button>
-        <button onClick={closeModal}>No</button>
+        <h3 className={css.modalTitle}>Delete contact</h3>
+        <div className={css.modalBtns}>
+          <button onClick={closeAndDeleteModal}>Yes</button>
+          <button onClick={closeModal}>No</button>
+        </div>
       </ReactModal>
     </div>
   );

@@ -30,3 +30,16 @@ ul {
 li {
   list-style: none;
 }
+
+button {
+  cursor: pointer;
+
+  font-size: larger;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+input {
+  outline: none;
+}

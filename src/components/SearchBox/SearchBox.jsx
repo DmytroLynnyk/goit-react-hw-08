@@ -9,7 +9,7 @@ export const SearchBox = () => {
 
   return (
     <div className={css.searchBox}>
-      <p>Find contacts by name or phone number</p>
+      <p className={css.title}>Find contacts by name or phone number</p>
       <input
         className={css.searchBoxInput}
         type="text"

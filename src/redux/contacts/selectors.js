@@ -12,6 +12,12 @@ export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilters],
   (contacts, filters) => {
     const fuseOptions = {
+      includeScore: true,
+      shouldSort: true,
+      includeMatches: false,
+      findAllMatches: false,
+      minMatchCharLength: 1,
+
       keys: ["name", "number"],
     };
     const fuse = new Fuse(contacts, fuseOptions);
