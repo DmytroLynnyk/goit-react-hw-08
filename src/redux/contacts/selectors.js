@@ -1,13 +1,12 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { selectFilters } from "../filter/selectors";
+import Fuse from "fuse.js";
 
-export const selectContacts = (state) => state.contacts.items;
+const selectContacts = (state) => state.contacts.items;
 
 export const selectIsLoading = (state) => state.contacts.loading;
 
 export const selectError = (state) => state.contacts.error;
-
-import Fuse from "fuse.js";
 
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilters],
@@ -16,6 +15,10 @@ export const selectFilteredContacts = createSelector(
       keys: ["name", "number"],
     };
     const fuse = new Fuse(contacts, fuseOptions);
-    return fuse.search(filters);
+
+    if (fuse.search(filters).length === 0) {
+      return contacts;
+    }
+    return fuse.search(filters).map((el) => el.item);
   }
 );
