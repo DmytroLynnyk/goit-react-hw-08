@@ -7,13 +7,15 @@ export const selectIsLoading = (state) => state.contacts.loading;
 
 export const selectError = (state) => state.contacts.error;
 
-export const selectVisibleContacts = createSelector(
+import Fuse from "fuse.js";
+
+export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilters],
   (contacts, filters) => {
-    return contacts.filter(
-      (contact) =>
-        contact.name.toLowerCase().includes(filters.toLowerCase()) ||
-        contact.number.toLowerCase().includes(filters.toLowerCase())
-    );
+    const fuseOptions = {
+      keys: ["name", "number"],
+    };
+    const fuse = new Fuse(contacts, fuseOptions);
+    return fuse.search(filters);
   }
 );
