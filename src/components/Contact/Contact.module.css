@@ -8,16 +8,28 @@
   padding: 8px;
 }
 
-.contactItem :not(:last-of-type) {
-  margin-bottom: 12px;
-}
-
 .contactInfo {
   font-size: larger;
   font-weight: 500;
   text-align: left;
 }
 
+.contactInfo :not(:last-of-type) {
+  margin-bottom: 12px;
+}
+
 .contactIcon {
   margin-right: 8px;
+}
+
+.contactBtns {
+  min-width: 74px;
+}
+
+.contactBtns * {
+  width: 100%;
+}
+
+.contactBtns :not(:last-of-type) {
+  margin-bottom: 12px;
 }

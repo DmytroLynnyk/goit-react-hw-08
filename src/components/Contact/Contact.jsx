@@ -17,7 +17,7 @@ export const Contact = ({ contact: { id, name, number } }) => {
           {number}
         </p>
       </div>
-      <div>
+      <div className={css.contactBtns}>
         <EditModal id={id} name={name} number={number} />
         <DeleteModal id={id} />
       </div>
