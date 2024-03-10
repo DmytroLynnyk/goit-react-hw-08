@@ -2,6 +2,7 @@ import css from "./Contact.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdPerson } from "react-icons/io";
 import { DeleteModal } from "../DeleteModal/DeleteModal";
+import { EditModal } from "../EditModal/EditModal";
 
 export const Contact = ({ contact: { id, name, number } }) => {
   return (
@@ -16,7 +17,10 @@ export const Contact = ({ contact: { id, name, number } }) => {
           {number}
         </p>
       </div>
-      <DeleteModal id={id} />
+      <div>
+        <EditModal id={id} name={name} number={number} />
+        <DeleteModal id={id} />
+      </div>
     </div>
   );
 };

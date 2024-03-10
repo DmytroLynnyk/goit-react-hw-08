@@ -43,7 +43,7 @@ export const DeleteModal = ({ id }) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Delete Modal"
       >
         <h3 className={css.modalTitle}>Delete contact</h3>
         <div className={css.modalBtns}>
