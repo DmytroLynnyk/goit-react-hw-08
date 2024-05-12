@@ -1,4 +1,4 @@
-import { useEffect, lazy } from "react";
+import { useEffect, lazy, Profiler } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
@@ -12,6 +12,7 @@ const HomePage = lazy(() => import("../pages/Home"));
 const RegisterPage = lazy(() => import("../pages/Register"));
 const LoginPage = lazy(() => import("../pages/Login"));
 const ContactsList = lazy(() => import("../pages/Contacts"));
+const Profile = lazy(() => import("../pages/Profile"));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -50,6 +51,12 @@ export const App = () => {
             path="/contacts"
             element={
               <PrivateRoute redirectTo="/login" component={<ContactsList />} />
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute redirectTo="/login" component={<Profile />} />
             }
           />
         </Route>

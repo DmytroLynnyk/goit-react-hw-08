@@ -4,7 +4,8 @@ import { IoMdPerson } from "react-icons/io";
 import { DeleteModal } from "../DeleteModal/DeleteModal";
 import { EditModal } from "../EditModal/EditModal";
 
-export const Contact = ({ contact: { id, name, number } }) => {
+// eslint-disable-next-line react/prop-types
+export const Contact = ({ contact: { _id, name, number } }) => {
   return (
     <div className={css.contactItem}>
       <div className={css.contactInfo}>
@@ -18,8 +19,8 @@ export const Contact = ({ contact: { id, name, number } }) => {
         </p>
       </div>
       <div className={css.contactBtns}>
-        <EditModal id={id} name={name} number={number} />
-        <DeleteModal id={id} />
+        <EditModal _id={_id} name={name} number={number} />
+        <DeleteModal _id={_id} />
       </div>
     </div>
   );

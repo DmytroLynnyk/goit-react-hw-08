@@ -38,16 +38,19 @@ const contactsSlice = createSlice({
       .addCase(addContact.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
+        console.log(action.payload);
         state.items.push(action.payload);
       })
       .addCase(addContact.rejected, handleReject)
 
       .addCase(deleteContact.pending, handlePending)
       .addCase(deleteContact.fulfilled, (state, action) => {
+        console.log(action.payload);
+
         state.loading = false;
         state.error = null;
         const index = state.items.findIndex(
-          (contact) => contact.id === action.payload.id
+          (contact) => contact._id === action.payload._id
         );
         state.items.splice(index, 1);
       })

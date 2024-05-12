@@ -5,11 +5,11 @@ import { selectFilteredContacts } from "../../redux/contacts/selectors";
 
 export const ContactsList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
-
   return (
     <ul className={css.contactsList}>
       {filteredContacts.map((contact) => (
-        <li key={contact.id} className={css.contactsItem}>
+        // console.log(contact),
+        <li key={contact._id} className={css.contactsItem}>
           <Contact contact={contact} />
         </li>
       ))}
