@@ -1,4 +1,4 @@
-import { useEffect, lazy, Profiler } from "react";
+import { useEffect, lazy } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
