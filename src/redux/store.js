@@ -32,6 +32,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+  // eslint-disable-next-line no-undef
   devTools: process.env.NODE_ENV === "development",
 });
 

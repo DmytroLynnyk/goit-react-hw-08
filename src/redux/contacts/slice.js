@@ -10,7 +10,7 @@ const handlePending = (state) => {
   state.loading = true;
 };
 
-const handleReject = (state) => {
+const handleReject = (state, action) => {
   state.loading = false;
   state.error = action.payload;
 };
