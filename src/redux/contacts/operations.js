@@ -40,8 +40,6 @@ export const deleteContact = createAsyncThunk(
 
       const response = await axios.delete(`/contacts/${contactId}`);
 
-      // console.log(response);
-
       toast.success("Contact is deleted");
       return response.data;
     } catch (e) {
